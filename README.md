@@ -8,7 +8,7 @@ Radiografía de la columna con escoliosis idiopática en un paciente pediátrico
 
 ![spine](https://github.com/user-attachments/assets/94f8edcd-1e03-47f3-8e80-1ec7fc15d969)
 
-Función del contorno de la columna con 19 puntos equidistantes.
+Función del contorno de la columna con 19 puntos equidistantes desde T1 hasta S1.
 
 ![spine](https://github.com/user-attachments/assets/d9f5729d-2a27-4fc5-b862-875a0023efab)
 
