@@ -21,14 +21,14 @@ def frac_latex(match):
     else:
         return f'\\frac{{{Fraction(float(match.group())).limit_denominator(10000).numerator}}}{{{Fraction(float(match.group())).limit_denominator(10000).denominator}}}'
 
-f = re.sub(r"\b0\.\d+\b",frac_latex,latex(f,mode="inline",fold_short_frac=False))
+f = re.sub(r'\b0\.\d+\b',frac_latex,latex(f,mode='inline',fold_short_frac=False))
 
 plt.plot(np.linspace(-115,133,400),fx(np.linspace(-115,133,400)),linestyle='solid',linewidth=2,label=fr'f(x) = {f}',color='white')
 
 for (x_,y_),color in zip(points,plt.cm.rainbow(np.linspace(0,1,len(points)))):
     ax.scatter(x_,y_,color=color,s=50)
 
-ax.axhline(y=0,color='black',linewidth=1) 
+ax.axhline(y=0,color='black',linewidth=1)
 ax.axvline(x=0,color='black',linewidth=1)
 ax.set_xlim(-210,247)
 ax.set_ylim(-94,95)
