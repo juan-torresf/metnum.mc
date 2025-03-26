@@ -17,7 +17,7 @@ def natural(points=points):
         z[i] = (alpha[i-1]-h[i-1]*z[i-1])/l[i]
 
     c[len(points)] = 0
-    for i in range(len(points)-1, 0, -1):
+    for i in range(len(points)-1,0,-1):
         c[i] = z[i]-u[i]*c[i+1]
         b[i] = (points[i][1]-points[i-1][1])/h[i]-h[i]*(c[i+1]+2*c[i])/3
         d[i] = (c[i+1]-c[i])/(3*h[i])
@@ -35,6 +35,7 @@ def sujeto(points=points,df=df):
     
     alpha[0] = 3*((points[1][1]-points[0][1])/h[1]-df(points[0][0]))
     alpha[len(points)-1] = 3*(df(points[len(points)-1][0])-(points[len(points)-1][1]-points[len(points)-2][1])/h[len(points)-1])
+
     for i in range(1,len(points)-1):
         alpha[i] = 3*((points[i+1][1]-points[i][1])/h[i+1]-(points[i][1]-points[i-1][1])/h[i])
     
@@ -51,7 +52,7 @@ def sujeto(points=points,df=df):
         d[i] = (c[i+1]-c[i])/(3*h[i])
         a[i] = points[i-1][1]
 
-    return a[1:], b[1:], c[1:len(points)], d[1:]
+    return a[1:],b[1:],c[1:len(points)],d[1:]
 
 def splines(trazadores):
 
